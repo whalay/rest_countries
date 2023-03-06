@@ -56,7 +56,7 @@ function App() {
     <div>
       <Header />
       {isLoad ? (
-        <p>loading... wait</p>
+        <p className="text-center text-xl font-semibold py-10">Loading... Please wait ...</p>
       ) : (
         <Routes>
           <Route path="/" element={<Homepage data={data} />} />
