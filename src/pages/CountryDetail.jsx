@@ -13,7 +13,7 @@ const CountryDetail = ({ data }) => {
   console.log(data);
 
   return (
-    <div className=" px-14 h-screen">
+    <div className=" md:px-14 p-5 h-screen">
       <div className="my-10">
         <BackButton />
         {/* <button className="shadow-md px-5 py-1 border-2">Back</button> */}
