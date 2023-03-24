@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 
 import BackButton from "../components/BackButton";
 
-const CountryDetail = ({ data }) => {
+const CountryDetail = () => {
+  const [country, setCountry] = useState([])
+  const [isLoaded, setIsLoaded] = useState(false)
   const { name } = useParams();
   const navigate = useNavigate();
 
-  const country = data.find((country) => country.name.common === name);
+  useEffect(() => {
+    fetch(`https://restcountries.com/v3.1/name/${name}`)
+      .then(res => res.json())
+      .then(
+        (results) => {
+          setIsLoaded(true);
+          setCountry(results);
+          console.log(results);
+          console.log(country);
+        }
+      )
+  }, [name])
 
-  console.log(country);
-  console.log(data);
+  // const country = data.find((country) => country.name.common === name);
+
+
 
   return (
     <div className=" md:px-14 p-5 h-screen">
@@ -18,14 +32,15 @@ const CountryDetail = ({ data }) => {
         <BackButton />
         {/* <button className="shadow-md px-5 py-1 border-2">Back</button> */}
       </div>
-
-      <div className="flex flex-col md:flex-row md:items-center   md:justify-between md:gap-20 ">
-        {/* <div className="flex justify-center mb-5 md:flex-grow"> */}
-        <img src={country.flags.png} alt="" className="basis-1/2" />
-        {/* </div> */}
-        <div className="basis-1/2">
+      {country.map((country, key) =>
+      (
+        <div key={country.ccn2} className="flex flex-col md:flex-row md:items-center   md:justify-between md:gap-20 ">
+          <div className="flex justify-center mb-5 md:flex-grow">
+            <img src={country?.flags?.svg} alt="" className="basis-1/2" />
+          </div>
+          <div className="basis-1/2">
           <div className="flex flex-col     md:px-0">
-            <h1 className="text-2xl font-bold py-5"> {country.name.common}</h1>
+            <h1 className="text-2xl font-bold py-5"> {country?.name.common}</h1>
             <div className="flex flex-col  md:flex-row  gap-5 md:gap-20 mb-5">
               <ul className="">
                 <li>
@@ -90,7 +105,10 @@ const CountryDetail = ({ data }) => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      )
+      )
+      }
     </div>
   );
 };
