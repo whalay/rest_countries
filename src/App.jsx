@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, Outlet } from "react-router";
+import { DarkModeContext, DarkModeProvider } from "./context/DarkModeContext";
 import Dropdown from "./components/Dropdown";
 import Header from "./components/Header";
 import CountryDetail from "./pages/CountryDetail";
@@ -19,7 +20,7 @@ function App() {
   //     // console.log(actualData);
 
   //     // setIsLoad(false);
-     
+
   //       const response = await fetch(`https://restcountries.com/v3.1/all`);
   //       if (!response.ok) {
   //         throw new Error(
@@ -53,15 +54,14 @@ function App() {
   // };
 
   return (
-    <div>
+    <DarkModeProvider>
       <Header />
-      
-        <Routes>
-          <Route path="/" element={<Homepage  />} />
-          <Route path="/:name" element={<CountryDetail  />} />
-        </Routes>
-      
-    </div>
+
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/:name" element={<CountryDetail />} />
+      </Routes>
+    </DarkModeProvider>
   );
 }
 

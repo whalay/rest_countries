@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { DarkModeContext } from "../context/DarkModeContext";
 import Dropdown from "../components/Dropdown";
 import Search from "../components/Search";
 // import { Country } from "../assets/Data";
 import Card from "../components/Card";
 
 const Homepage = () => {
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+
 
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
@@ -15,7 +18,7 @@ const Homepage = () => {
 
   const regionList = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
 
-  
+
 
   useEffect(() => {
     const getData = async () => {
@@ -47,21 +50,21 @@ const Homepage = () => {
 
   useEffect(() => {
     const result = items.filter(
-        item =>
+      item =>
         (!searchInput || item.name.common.toLowerCase().includes(searchInput.toLowerCase())) &&
         (!selectedOption || item.region === selectedOption)
     );
     setFilteredItems(result);
     console.log(result);
-    }, [searchInput, items, selectedOption]);
+  }, [searchInput, items, selectedOption]);
   return (
     // {isLoad ? (
     //   <p className="text-center text-xl font-semibold py-10">Loading... Please wait ...</p>
     // ) : (
-    <div className="bg-Light-Mode text-Very-Dark-Blue">
+    <div className={`${darkMode ? "bg-Dark-Mode text-White" : "bg-Light-Mode text-Very-Dark-Blue"}`}>
       <div className="md:flex items-center justify-between">
-        <Search handleChangeInput={handleChangeInput} searchInput={searchInput} />
-        <Dropdown handleSelect={handleSelect} selectedOption={selectedOption} regionList={regionList}/>
+        <Search handleChangeInput={handleChangeInput} searchInput={searchInput} darkMode={darkMode}/>
+        <Dropdown handleSelect={handleSelect} selectedOption={selectedOption} regionList={regionList} darkMode={darkMode} />
       </div>
       <div className="flex flex-col flex-wrap sm:flex-row justify-between  sm:gap-5 sm:px-14  ">
         {filteredItems?.map((country) => {

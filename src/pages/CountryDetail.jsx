@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router";
+import { DarkModeContext } from "../context/DarkModeContext";
 
 import BackButton from "../components/BackButton";
 
 const CountryDetail = () => {
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   const [country, setCountry] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
   const { name } = useParams();
@@ -27,7 +30,7 @@ const CountryDetail = () => {
 
 
   return (
-    <div className=" md:px-14 p-5 h-screen">
+    <div className={`${darkMode ? "bg-Dark-Mode text-White" : "bg-Light-Mode text-Very-Dark-Blue"} md:px-14 p-5 h-screen`}>
       <div className="my-10">
         <BackButton />
         {/* <button className="shadow-md px-5 py-1 border-2">Back</button> */}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-function Dropdown({regionList, selectedOption, handleSelect}) {
+function Dropdown({regionList, selectedOption, handleSelect, darkMode}) {
   // const [selectedOption, setSelectedOption] = useState("");
   // const regionList = ['All', 'Africa', 'America', 'Asia', 'Europe', 'Oceania']
 
@@ -11,7 +11,7 @@ function Dropdown({regionList, selectedOption, handleSelect}) {
 
   return (
     <div className=' md:px-14 p-5 md:w-1/3'>
-      <select value={selectedOption} onChange={handleSelect} className="p-3 outline-none md:w-full shadow-md">
+      <select value={selectedOption} onChange={handleSelect} className={`${darkMode ?"bg-Dark-Mode text-White ":"bg-Light-Mode text-Very-Dark-Blue drop-shadow-xl  border" } p-2 outline-none md:w-full shadow-md  `}>
         {/* <option value="">Filter by Region</option>
       <option value="option1">Africa</option>
       <option value="option2">America</option>
