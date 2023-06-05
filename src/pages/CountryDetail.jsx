@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router";
+// import DarkModeContext from "../context/DarkModeContext";
 import { DarkModeContext } from "../context/DarkModeContext";
 
 import BackButton from "../components/BackButton";
@@ -35,9 +36,9 @@ const CountryDetail = () => {
         <BackButton />
         {/* <button className="shadow-md px-5 py-1 border-2">Back</button> */}
       </div>
-      {country.map((country, key) =>
+      {country.map((country, index) =>
       (
-        <div key={country.ccn2} className="flex flex-col md:flex-row md:items-center   md:justify-between md:gap-20 ">
+        <div key={index} className="flex flex-col md:flex-row md:items-center   md:justify-between md:gap-20 ">
           <div className="flex justify-center mb-5 md:flex-grow">
             <img src={country?.flags?.svg} alt="" className="basis-1/2" />
           </div>

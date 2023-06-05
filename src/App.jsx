@@ -1,7 +1,8 @@
 
 import { Routes, Route} from "react-router";
-import { DarkModeProvider } from "./context/DarkModeContext";
-// import {DarkModeProvider} from './context/DarkModeContext.js';
+
+
+import DarkModeProvider from "./context/DarkModeProvider";
 
 
 import Header from "./components/Header";

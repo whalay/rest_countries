@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-// import  DarkModeContext  from "../context/DarkModeContext";
+// import DarkModeContext from "../context/DarkModeContext";
 import { DarkModeContext } from "../context/DarkModeContext";
 import Dropdown from "../components/Dropdown";
 import Search from "../components/Search";
@@ -68,11 +68,12 @@ const Homepage = () => {
         <Dropdown handleSelect={handleSelect} selectedOption={selectedOption} regionList={regionList} darkMode={darkMode} />
       </div>
       <div className="flex flex-col flex-wrap sm:flex-row justify-between  sm:gap-5 sm:px-14  ">
-        {filteredItems?.map((country) => {
+        {filteredItems?.map((country, index) => {
           return (
 
             <Card
-              key={country.ccn3}
+            key={index}
+              // key={country.ccn3}
               id={country.ccn3}
               name={country.name.common}
               population={country.population}
