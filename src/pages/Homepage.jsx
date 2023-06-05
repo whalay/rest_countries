@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-// import DarkModeContext from "../context/DarkModeContext";
-// import { DarkModeContext } from "../context/DarkModeContext";
-import DarkModeContext from "../context/DarkModeContext";
+import { DarkModeContext } from "../context/DarKMode";
 import Dropdown from "../components/Dropdown";
 import Search from "../components/Search";
 // import { Country } from "../assets/Data";
 import Card from "../components/Card";
 
 const Homepage = () => {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { darkMode} = useContext(DarkModeContext);
 
 
   const [items, setItems] = useState([]);

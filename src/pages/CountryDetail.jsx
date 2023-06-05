@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router";
-// import DarkModeContext from "../context/DarkModeContext";
-// import { DarkModeContext } from "../context/DarkModeContext";
-import DarkModeContext from "../context/DarkModeContext";
+import { DarkModeContext } from "../context/DarKMode";
 
 import BackButton from "../components/BackButton";
 
 const CountryDetail = () => {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext);
 
   const [country, setCountry] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)

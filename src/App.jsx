@@ -2,7 +2,7 @@
 import { Routes, Route} from "react-router";
 
 
-import DarkModeProvider from "./context/DarkModeProvider";
+import { DarkModeProvider } from "./context/DarKMode";
 
 
 import Header from "./components/Header";
