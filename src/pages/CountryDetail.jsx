@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router";
 // import DarkModeContext from "../context/DarkModeContext";
-import { DarkModeContext } from "../context/DarkModeContext";
+// import { DarkModeContext } from "../context/DarkModeContext";
+import DarkModeContext from "../context/DarkModeContext";
 
 import BackButton from "../components/BackButton";
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 // import DarkModeContext from "../context/DarkModeContext";
-import { DarkModeContext } from "../context/DarkModeContext";
+// import { DarkModeContext } from "../context/DarkModeContext";
+import DarkModeContext from "../context/DarkModeContext";
 import Dropdown from "../components/Dropdown";
 import Search from "../components/Search";
 // import { Country } from "../assets/Data";

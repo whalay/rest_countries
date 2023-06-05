@@ -20,7 +20,8 @@
 // export  { DarkModeContext, DarkModeProvider };
 
 import React, { createContext } from 'react';
+const DarkModeContext = createContext();
 
-export  const DarkModeContext = createContext();
+export default DarkModeContext;
 
 

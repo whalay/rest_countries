@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 import { HiOutlineMoon } from "react-icons/hi";
 import { useNavigate } from "react-router";
-import { DarkModeContext } from "../context/DarkModeContext";
+
+import DarkModeContext from "../context/DarkModeContext";
 
 const Header = () => {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
