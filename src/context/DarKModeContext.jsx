@@ -1,9 +1,9 @@
 // DarkModeContext.js
 import React, { createContext, useState } from 'react';
 
-const DarkModeContext = createContext();
+export const DarkModeContext = createContext();
 
-const DarkModeProvider = ({ children }) => {
+export const DarkModeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -17,4 +17,4 @@ const DarkModeProvider = ({ children }) => {
   );
 };
 
-export { DarkModeContext, DarkModeProvider };
+// export { DarkModeContext, DarkModeProvider };

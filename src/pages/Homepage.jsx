@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+// import  DarkModeContext  from "../context/DarkModeContext";
 import { DarkModeContext } from "../context/DarkModeContext";
 import Dropdown from "../components/Dropdown";
 import Search from "../components/Search";
@@ -63,7 +64,7 @@ const Homepage = () => {
     // ) : (
     <div className={`${darkMode ? "bg-Dark-Mode text-White" : "bg-Light-Mode text-Very-Dark-Blue"}`}>
       <div className="md:flex items-center justify-between">
-        <Search handleChangeInput={handleChangeInput} searchInput={searchInput} darkMode={darkMode}/>
+        <Search handleChangeInput={handleChangeInput} searchInput={searchInput} darkMode={darkMode} />
         <Dropdown handleSelect={handleSelect} selectedOption={selectedOption} regionList={regionList} darkMode={darkMode} />
       </div>
       <div className="flex flex-col flex-wrap sm:flex-row justify-between  sm:gap-5 sm:px-14  ">
