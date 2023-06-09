@@ -15,7 +15,7 @@ const Search = ({ searchInput, handleChangeInput, darkMode }) => {
           name=""
           id=""
           placeholder="Search for a country..."
-          className={`${darkMode ? "bg-Dark-Mode text-White placeholder-white" : "bg-Light-Mode text-Dark-Gray placeholder-Very-Dark-Blue "}  outline-none w-full  text-white`}
+          className={`${darkMode ? "bg-Dark-Mode text-White placeholder-white" : "bg-Light-Mode text-Very-Dark-Blue placeholder-Very-Dark-Blue "}  outline-none w-full`}
         />
       </span>
     </div>
